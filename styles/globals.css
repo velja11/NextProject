@@ -3,4 +3,11 @@
 @tailwind utilities;
 
 
+.logo{
+    @apply ml-4 font-bold lowercase text-3xl md:uppercase cursor-pointer hover:text-white;
+}
+
+
+
+
 
