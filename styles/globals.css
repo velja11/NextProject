@@ -19,6 +19,13 @@
    @apply border px-4 py-2 box-border rounded-md w-4/5;
 }
 
+body{
+    background-color: rgb(244, 222, 180);
+    color:black;
+}
+
+
+
 
 
 

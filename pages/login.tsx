@@ -20,9 +20,9 @@ const Login = () => {
 
 
     return (
-    <div className="text-center mt-10 flex justify-center items-center">
+    <div className="text-center mt-10 flex justify-center items-center mb-10">
         
-        <form className="form bg-wheat-400 border-gray shadow-gray-300" onSubmit={submitHandler}>
+        <form className="form bg-wheat-400 border-gray shadow-gray-300 bg-white" onSubmit={submitHandler}>
             <h1 className="mt-8 font-bold text-3xl">Login</h1>
             <p className="mt-3 text-md non-italic">Hey, enter your details to sign in<br /> to your account</p>
             
