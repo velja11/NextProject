@@ -12,7 +12,7 @@
 }
 
 .form{
-   @apply mt-3 flex flex-col justify-start items-center border mobile:w-[80%] tablet:w-[50%] laptop:w-[28%] h-full rounded-xl shadow-sm;
+   @apply mt-3 flex flex-col justify-start items-center border mobile:w-[80%] tablet:w-[50%] laptop:w-[28%] h-full shadow-sm;
 }
 
 .input{

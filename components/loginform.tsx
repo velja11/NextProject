@@ -10,7 +10,7 @@ const LoginForm:React.FC<{onSubmitHandler:(event:React.FormEvent<HTMLFormElement
     return (
         <div className="text-center mt-10 flex justify-center items-center mb-10">
         
-        <form className="form bg-wheat-400 border-gray shadow-gray-300 bg-white" onSubmit={props.onSubmitHandler}>
+        <form className="form bg-wheat-400 border-gray shadow-gray-300 bg-white rounded-3xl" onSubmit={props.onSubmitHandler}>
             <h1 className="mt-8 font-bold text-3xl">Login</h1>
             <p className="mt-3 text-md non-italic">Hey, enter your details to sign in<br /> to your account</p>
             
