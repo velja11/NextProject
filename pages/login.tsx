@@ -26,8 +26,8 @@ const Login = () => {
             <h1 className="mt-8 font-bold text-3xl">Login</h1>
             <p className="mt-3 text-md non-italic">Hey, enter your details to sign in<br /> to your account</p>
             
-            <input placeholder="Enter email" className="input mt-10"></input>
-            <input placeholder="Password" className="input mt-2"></input>
+            <input placeholder="Enter email" type="email" className="input mt-10"></input>
+            <input placeholder="Password" type="password" className="input mt-2"></input>
             
 
             <button className="border border-gray bg-orange-300 px-4 py-2 font-bold box-border rounded-md mt-16 w-4/5">Sign in</button>
