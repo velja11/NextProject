@@ -22,34 +22,34 @@ const Login = () => {
     return (
     <div className="text-center mt-10 flex justify-center items-center">
         
-        <form className="mt-3 flex flex-col justify-start items-center bg-wheat-400 border border-gray w-[28%] h-3/4 rounded-xl shadow-sm shadow-gray-300" onSubmit={submitHandler}>
+        <form className="form bg-wheat-400 border-gray shadow-gray-300" onSubmit={submitHandler}>
             <h1 className="mt-8 font-bold text-3xl">Login</h1>
             <p className="mt-3 text-md non-italic">Hey, enter your details to sign in<br /> to your account</p>
             
-            <input placeholder="Enter email" className="border px-4 py-2 box-border rounded-md mt-10 w-4/5"></input>
-            <input placeholder="Password" className="border border-gray px-4 py-2 mt-2 box-border rounded-md w-4/5"></input>
+            <input placeholder="Enter email" className="input mt-10"></input>
+            <input placeholder="Password" className="input mt-2"></input>
             
 
             <button className="border border-gray bg-orange-300 px-4 py-2 font-bold box-border rounded-md mt-16 w-4/5">Sign in</button>
 
             <p className="mt-6">-- Or Sign in with --</p>
 
-            <div className="flex flex-row justify-between mt-5 mb-8 w-4/5">
-                <button className="buttonLogo border-gray w-[32%]">
+            <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-5 mt-5 mb-8 w-4/5">
+                <button className="buttonLogo border-gray w-full">
                 {img1}
-                <span className="text-sm mr-3">Google</span>
+                <span className="text-sm ml-2">Google</span>
                </button>
-                <button className="buttonLogo w-[32%] border-gray">
+                <button className="buttonLogo w-full border-gray">
                 {img2}
-                <span className="text-sm mr-2">Apple ID</span>
+                <span className="text-sm ml-2">Apple ID</span>
                 </button>
-                <button className="buttonLogo border-gray w-[32%] flex ">
+                <button className="buttonLogo border-gray w-full">
                 {img3}
-                <span className="text-sm">Facebook</span>
+                <span className="text-sm ml-2">Facebook</span>
                 </button>
             </div>
 
-            <p className="mb-5">Don't have account?<Link href="/signup"><span className="ml-1 font-bold cursor-pointer hover:underline">Create now</span></Link> </p>
+            <p className="mb-16">Don't have account?<Link href="/signup"><span className="ml-1 font-bold cursor-pointer hover:underline">Create now</span></Link> </p>
             
 
 

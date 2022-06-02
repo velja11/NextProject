@@ -4,12 +4,24 @@
 
 
 .logo{
-    @apply ml-4 font-bold lowercase text-3xl md:uppercase cursor-pointer hover:text-white;
+    @apply font-bold lowercase text-3xl md:uppercase cursor-pointer hover:text-white;
 }
 
 .buttonLogo{
-    @apply border px-3 py-1 rounded-md flex justify-between items-center;
+    @apply border px-3 py-1 rounded-md flex justify-center items-center;
 }
+
+.form{
+   @apply mt-3 flex flex-col justify-start items-center border mobile:w-[80%] tablet:w-[50%] laptop:w-[28%] h-full rounded-xl shadow-sm;
+}
+
+.input{
+   @apply border px-4 py-2 box-border rounded-md w-4/5;
+}
+
+
+
+
 
 
 

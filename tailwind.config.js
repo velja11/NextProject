@@ -6,6 +6,14 @@ module.exports = {
   theme: {
     extend: {
       screens:{
+        'mobile':'300px',
+
+        'tablet':'600px',
+
+        'laptop':'1060px',
+
+        'desktop':'1600px',
+
         'sm': '640px',
        
   
