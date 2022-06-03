@@ -32,14 +32,18 @@ const LoginForm:React.FC<{onAddHandler:(text:string | undefined, text2: string |
                 <p className="mt-3 text-md non-italic">Hey, enter your details to sign in<br /> to your account</p>
                 
                 <input placeholder="Enter email" type="email" className="input mt-10" ref={userRef}></input>
-                <input placeholder="Password" type="password" className="input mt-2" ref={passRef}></input>
+                <input placeholder="Password" type="password" className="input mt-4" ref={passRef}></input>
                 
     
                 <button className="border border-gray bg-orange-300 px-4 py-2 font-bold box-border rounded-md mt-16 w-4/5">Sign in</button>
     
-                <p className="mt-6">-- Or Sign in with --</p>
+                <div className="flex justify-center items-center w-[80%] mt-6">
+                <hr className="w-[5%] mr-2 bg-black h-0.5"/>
+                <p className="font-semibold">Or Sign in width</p>
+                <hr className="w-[5%] ml-2 bg-black h-0.5"/>
+                </div>
     
-                <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-5 mt-5 mb-8 w-4/5">
+                <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-5 mt-7 mb-8 w-4/5">
                     <button className="buttonLogo border-gray w-full">
                     {img1}
                     <span className="text-sm ml-2">Google</span>
