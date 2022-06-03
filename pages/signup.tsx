@@ -16,7 +16,7 @@ const Signup = () => {
                 <input type="tel"  className="signupInp" placeholder="Mobile"/>
             </div>
             
-            <input placeholder="Enter email" type="email" className="input mt-4" ></input>
+            <input placeholder="Email" type="email" className="input mt-4" ></input>
             <input placeholder="Password" type="password" className="input mt-4" ></input>
 
             <div className="flex justify-start items-center w-[80%] mt-8">

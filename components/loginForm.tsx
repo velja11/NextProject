@@ -31,7 +31,7 @@ const LoginForm:React.FC<{onAddHandler:(text:string | undefined, text2: string |
                 <h1 className="mt-8 font-bold text-3xl">Login</h1>
                 <p className="mt-3 text-md non-italic">Hey, enter your details to sign in<br /> to your account</p>
                 
-                <input placeholder="Enter email" type="email" className="input mt-10" ref={userRef}></input>
+                <input placeholder="Email" type="email" className="input mt-10" ref={userRef}></input>
                 <input placeholder="Password" type="password" className="input mt-4" ref={passRef}></input>
                 
     
