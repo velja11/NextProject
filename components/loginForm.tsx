@@ -44,15 +44,39 @@ const LoginForm:React.FC<{onAddHandler:(text:string | undefined, text2: string |
                 </div>
     
                 <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-5 mt-7 mb-8 w-4/5">
-                    <button className="buttonLogo border-gray w-full">
+                    <button type="button" onClick={() => window.open("http://www.gmail.com",'targetWindow',
+                                   `toolbar=no,
+                                    location=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=SomeSize,
+                                    height=SomeSize`)} className="buttonLogo border-gray w-full">
                     {img1}
                     <span className="text-sm ml-2">Google</span>
                    </button>
-                    <button className="buttonLogo w-full border-gray">
+                    <button  type="button" onClick={() => window.open("https://appleid.apple.com",'targetWindow',
+                                   `toolbar=no,
+                                    location=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=SomeSize,
+                                    height=SomeSize`)} className="buttonLogo w-full border-gray">
                     {img2}
                     <span className="text-sm ml-2">Apple ID</span>
                     </button>
-                    <button className="buttonLogo border-gray w-full">
+                    <button  type="button" onClick={() => window.open("http://www.facebook.com",'targetWindow',
+                                   `toolbar=no,
+                                    location=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=SomeSize,
+                                    height=SomeSize`)} className="buttonLogo border-gray w-full">
                     {img3}
                     <span className="text-sm ml-2">Facebook</span>
                     </button>

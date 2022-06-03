@@ -1,10 +1,32 @@
 import Link from "next/link"
+import { useRouter } from "next/router";
+import React, { useState } from "react"
 
 const Signup = () => {
+
+    const [cbxAgree, setCxbAgree] = useState<boolean>(false);
+    const router = useRouter();
+
+
+
+    const onSubmitHandler = (event:React.SyntheticEvent) =>{
+        event.preventDefault();
+
+        if(cbxAgree !== true){
+            return;
+        }
+
+        router.push("/login")
+
+    }
+
+
+
+
     return (
         <div className="text-center mt-10 flex justify-center items-center mb-10">
             
-        <form className="form bg-wheat-400 border-gray shadow-gray-300 bg-white rounded-3xl">
+        <form className="form bg-wheat-400 border-gray shadow-gray-300 bg-white rounded-3xl" onSubmit={onSubmitHandler}>
             <h1 className="mt-8 font-bold text-3xl">Sign up</h1>
             <p className="mt-3 text-md non-italic">Hey, let's fill the fields and create account</p>
 
@@ -20,7 +42,7 @@ const Signup = () => {
             <input placeholder="Password" type="password" className="input mt-4" ></input>
 
             <div className="flex justify-start items-center w-[80%] mt-8">
-            <input type="checkbox" className="mb-5 desktop:mb-0" ></input>
+            <input type="checkbox" id="check" className="mb-5 desktop:mb-0" onChange={(e) => setCxbAgree(e.target.checked)} ></input>
             <p className="ml-1 text-sm desktop:ml-2">I agree with Terms of Conditions and Privacy Policies</p>
             </div>
             
