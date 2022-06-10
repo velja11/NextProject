@@ -1,21 +1,31 @@
 import React from "react";
 import { useRouter } from "next/router";
 import LoginForm from "../components/loginForm";
+import { useAppDispatch } from "../src/hooks";
+import { login, setSignInError } from "../src/features/loginSlice";
+import { signIn, auth } from "../features/firebase";
 
 
 const Login = () => {
 
     const router = useRouter();
+    const dispatch = useAppDispatch();
 
-    const testHandler = (text:string | undefined, text2: string | undefined) => {
+    const testHandler = (userEmail:string, userPassword: string) => {
 
-        if(text?.trim().length == 0 || text2?.trim().length == 0){
+        if(userEmail.trim() == "" || userPassword.trim() == ""){
             return;
         }
+        else{
+            console.log(userEmail, userPassword);
 
-        console.log(text, text2);
-
-        router.push("/")
+            signIn(auth, userEmail, userPassword).then((cred) => {
+                console.log("User cred", cred.user.uid);
+                dispatch(login(cred.user.uid));
+                router.push("/")
+            }).catch((err) => dispatch(setSignInError(err.message)));
+            
+        }
 
     }
 
