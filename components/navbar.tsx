@@ -4,6 +4,7 @@ import { useAppSelector, useAppDispatch } from "../src/hooks";
 import { userId } from "../src/features/loginSlice";
 import { logout } from "../src/features/loginSlice";
 import { useRouter } from "next/router";
+import { logOut, auth } from "../features/firebase";
 
 const Navbar:React.FC<{children:React.ReactNode}> = (props) => {
 
@@ -13,8 +14,12 @@ const Navbar:React.FC<{children:React.ReactNode}> = (props) => {
 
 
     const logoutHandler = () => {
-        dispatch(logout());
+
+        logOut(auth).then(() => {
+          dispatch(logout());
         router.push("/login");
+        })
+
     }
 
     return (
