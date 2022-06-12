@@ -1,6 +1,5 @@
 import {initializeApp} from 'firebase/app'
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
-
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup ,FacebookAuthProvider} from 'firebase/auth'
 const firebaseConfig = {
     apiKey: "AIzaSyDMyb91OyjMEohiIGg3Hvogcz27tUF8aO0",
     authDomain: "next-app-test-57d16.firebaseapp.com",
@@ -26,3 +25,8 @@ const firebaseConfig = {
  export const provider = new GoogleAuthProvider(); 
 
  export const signPop = signInWithPopup;
+
+ export const facebookAuthProvider = FacebookAuthProvider;
+
+ export const faceProvider = new FacebookAuthProvider();
+

@@ -17,7 +17,7 @@ const Navbar:React.FC<{children:React.ReactNode}> = (props) => {
 
         logOut(auth).then(() => {
           dispatch(logout());
-        router.push("/login");
+          router.push("/login");
         })
 
     }
