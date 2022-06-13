@@ -18,6 +18,9 @@ const Navbar:React.FC<{children:React.ReactNode}> = (props) => {
         logOut(auth).then(() => {
           dispatch(logout());
           router.push("/login");
+
+          //window.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:3000/login";
+          
         })
 
     }

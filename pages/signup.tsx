@@ -73,7 +73,7 @@ const Signup = () => {
                 <input type="text" className="signupInp" placeholder="First name"/>
                 <input type="text" className="signupInp" placeholder="Last name"/>
                 <input type="text"  className="signupInp" placeholder="Country"/>
-                <input type="tel"  className="signupInp" placeholder="Mobile"/>
+                <input type="tel" id="test" className="signupInp" placeholder="Mobile"/>
             </div>
             
             <input placeholder="Email" type="email" className="input mt-4" ref={refEmail} ></input>
