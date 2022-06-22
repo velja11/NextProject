@@ -85,7 +85,7 @@ const Signup = () => {
             </div>
             
 
-            <button className="border border-gray bg-orange-300 px-4 py-2 font-bold box-border rounded-md mt-10 w-4/5">Create account</button>
+            <button className={`border border-gray ${!cbxAgree ? 'bg-gray-300 cursor-not-allowed' : 'bg-orange-300'} px-4 py-2 font-bold box-border rounded-md mt-10 w-4/5`}>Create account</button>
 
             <p className="mb-16 mt-10">Already have account?<Link href="/login"><span className="ml-1 font-bold cursor-pointer hover:underline">Log in</span></Link> </p>
             

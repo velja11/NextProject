@@ -2,7 +2,7 @@ import Link from "next/link"
 import React, { useRef } from "react"
 import { useAppSelector, useAppDispatch } from "../src/hooks"
 import { useRouter } from "next/router"
-import { notif, deleteNotifiaction, deleteSignUpNot, notifSignup, errorSignInNots, deleteSignInError, login, setSignInError} from "../src/features/loginSlice"
+import { notif, deleteNotifiaction, deleteSignUpNot, notifSignup, errorSignInNots, deleteSignInError, login, setSignInError, resetPassSucces, deletePassReset} from "../src/features/loginSlice"
 import { auth, provider, googleProvider, signPop, facebookAuthProvider, faceProvider } from "../features/firebase"
 
 
@@ -24,6 +24,7 @@ const LoginForm:React.FC<{onAddHandler:(text:string, text2: string) => void}> = 
     const notification = useAppSelector(notif);
     const notificationSign = useAppSelector(notifSignup);
     const errorSignIn = useAppSelector(errorSignInNots);
+    const rstPasswordSucces = useAppSelector(resetPassSucces);
     
 
     const deleteNotificationHandler = () => {
@@ -38,6 +39,10 @@ const LoginForm:React.FC<{onAddHandler:(text:string, text2: string) => void}> = 
     const deleteErrorSignInHandler = () =>{
         dispatch(deleteSignInError());
 
+    }
+
+    const deleteResetNot = () => {
+        dispatch(deletePassReset());
     }
 
     const signInGoogleHandler = () => {
@@ -60,10 +65,9 @@ const LoginForm:React.FC<{onAddHandler:(text:string, text2: string) => void}> = 
             if(err.message === "Firebase: Error (auth/popup-closed-by-user)."){
                 return;
             }
-
+            
             dispatch(setSignInError(err.message));
-
-           
+  
         })
 
     }
@@ -122,15 +126,21 @@ const LoginForm:React.FC<{onAddHandler:(text:string, text2: string) => void}> = 
              </svg>
             </div>}
 
-            {errorSignIn && <div className="w-[28%] bg-red-400 p-2 rounded-xl flex justify-between items-center">
+            {rstPasswordSucces && <div className="w-[28%] bg-green-400 p-2 rounded-xl flex justify-between items-center">
+            
+            <div className="font-bold ml-2">{rstPasswordSucces}</div>
+            <svg xmlns="http://www.w3.org/2000/svg" onClick={deleteResetNot} className="h-6 w-6 text-black cursor-pointer hover:scale-125  mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+             </svg>
+            </div>}
+
+            {errorSignIn && <div className="w-[28%] bg-red-300 p-2 rounded-xl flex justify-between items-center">
             
             <div className="font-bold ml-2">{errorSignIn}</div>
             <svg xmlns="http://www.w3.org/2000/svg" onClick={deleteErrorSignInHandler} className="h-6 w-6 text-black cursor-pointer hover:scale-110 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
              </svg>
             </div>}
-
-
             
             <form className="form bg-wheat-400 border-gray shadow-gray-300 bg-white rounded-3xl" onSubmit={submitHandler}>
                 <h1 className="mt-8 font-bold text-3xl">Login</h1>
@@ -140,9 +150,10 @@ const LoginForm:React.FC<{onAddHandler:(text:string, text2: string) => void}> = 
                 <input placeholder="Password" type="password" className="input mt-4" ref={passRef}></input>
                 
     
-                <button className="border border-gray bg-orange-300 px-4 py-2 font-bold box-border rounded-md mt-16 w-4/5">Sign in</button>
+                <button className="border border-gray bg-orange-300 px-4 py-2 font-bold box-border rounded-md mt-14 w-4/5">Sign in</button>
+                <Link href="/new-password"><span className="underline cursor-pointer text-sm mt-2">Forget password? Get new</span></Link>
     
-                <div className="flex justify-center items-center w-[80%] mt-6">
+                <div className="flex justify-center items-center w-[80%] mt-16">
                 <hr className="w-[5%] mr-2 bg-black h-0.5"/>
                 <p className="font-semibold">Or Sign in width</p>
                 <hr className="w-[5%] ml-2 bg-black h-0.5"/>
@@ -173,8 +184,6 @@ const LoginForm:React.FC<{onAddHandler:(text:string, text2: string) => void}> = 
     
                 <p className="mb-16">Don't have account?<Link href="/signup"><span className="ml-1 font-bold cursor-pointer hover:underline">Create now</span></Link> </p>
                 
-    
-    
             </form>
         </div>
     )

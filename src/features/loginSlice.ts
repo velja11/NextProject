@@ -9,7 +9,9 @@ export type LoginState = {
     notification:boolean,
     notificationSignup:boolean,
     errorSignUp: string | null,
-    signInError:string | null
+    signInError:string | null,
+    resetPasswordError:string | null,
+    resetPasswordSucces:string | null
     
    
     
@@ -23,7 +25,9 @@ const initalState:LoginState = {
     createdUser:false,
     notificationSignup:false,
     errorSignUp: null,
-    signInError:null
+    signInError:null,
+    resetPasswordError:null,
+    resetPasswordSucces:null
     
     
 }
@@ -42,6 +46,7 @@ export const loginSlice= createSlice({
             state.userID = null
             state.isLogout = true
             state.notification = true
+            state.notificationSignup = false;
         },
         deleteNotifiaction:(state) => {
             state.notification = false;
@@ -65,12 +70,26 @@ export const loginSlice= createSlice({
         },
         deleteSignInError(state){
             state.signInError = null;
+        },
+        setResetPassErr(state,action){
+            state.resetPasswordError = action.payload;
+        },
+        deletePassErr(state){
+            state.resetPasswordError = null;
+        },
+        setPassReset(state,action){
+            state.resetPasswordSucces = action.payload;
+        },
+        deletePassReset(state){
+            state.resetPasswordSucces = null;
         }
+
+
     }
 })
 
 
-export const {login, logout ,deleteNotifiaction, createNewUsr, deleteSignUpNot, setSignUpError, deleteSignUpNotification, setSignInError, deleteSignInError} = loginSlice.actions
+export const {login, logout ,deleteNotifiaction, createNewUsr, deleteSignUpNot, setSignUpError, deleteSignUpNotification, setSignInError, deleteSignInError, setResetPassErr, deletePassErr, setPassReset, deletePassReset} = loginSlice.actions
 
 export const userId = (state:RootState) => state.login.userID;
 export const isLogOut = (state:RootState) => state.login.isLogout;
@@ -79,6 +98,8 @@ export const notif = (state:RootState) => state.login.notification
 export const notifSignup = (state:RootState) => state.login.notificationSignup;
 export const errorSignUpNots = (state:RootState) => state.login.errorSignUp;
 export const errorSignInNots = (state:RootState) => state.login.signInError;
+export const resetPassNot = (state:RootState) => state.login.resetPasswordError;
+export const resetPassSucces = (state:RootState) => state.login.resetPasswordSucces;
 
 
 export const loginReducer = loginSlice.reducer;
