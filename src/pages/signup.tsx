@@ -65,7 +65,7 @@ const Signup = () => {
       >
         <h1 className="mt-8 font-bold text-3xl">Sign up</h1>
         <p className="mt-3 text-md non-italic">
-          Hey, let's fill the fields and create account
+          Hey, let&apos;s fill the fields and create account
         </p>
 
         <div className="grid grid-cols-2 gap-4 w-[80%] mt-10">

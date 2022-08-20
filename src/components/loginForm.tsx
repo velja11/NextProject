@@ -247,7 +247,7 @@ const LoginForm: React.FC<{
         </div>
 
         <p className="mb-16">
-          Don't have account?
+          Don&apos;t have account?
           <Link href="/signup">
             <span className="ml-1 font-bold cursor-pointer hover:underline">
               Create now
